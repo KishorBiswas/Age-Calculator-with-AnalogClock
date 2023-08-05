@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root{
+    --bgclor: #3bb7e9;
+    --borderClr :  rgba(1, 35, 226, 0.5);
+    --inerClockClr: rgba(36, 97, 138, 0.575);
+    --brandClr: #fff;
+    --clrHeading :  #fff200;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    max-height: max-content;
+    background-color: var(--bgclor);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.active{
+    --bgclor: #343434;
+    --borderClr :  #ffff;
+    --inerClockClr: #2b2a2a;
+    --fontClr: #FFF;
+    --boxShadowClr: #afabab;
+    --brandClr: #18dcff;
+    --clrHeading:  #48ff00;;
+}
+
+
+
+.outerClock{
+    position: relative;
+    width: 42%;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  
+}
+
+.wraper{
+    position: relative;
+}
+.changeColor{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin:20px auto;
+}
+.changeColor h3{
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--brandClr);
+    font-family: 'Dancing Script', cursive;
+}
+
+.changeColor img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.brand{
+    position: absolute;
+    top:40%;
+    left: 32%;
+    font-size: 20px;
+    color: var(--brandClr);
+    text-shadow: 0 2px 6px #363636;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border: 2px solid var(--borderClr);
+    background-color: var(--inerClockClr); 
+    box-shadow: 0 0 15px #645e64;
+    filter: saturate(110%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.clock::before{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 5px 2px #3134f3;
+    z-index: 4;
+}
+
+
+.clock::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #df0dce;
+    box-shadow: 0 0 2px 1px #f331b2;
+    z-index: 5;
+}
+
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: block;
+    font-size: 20px;
+    text-shadow: 0 2px 6px #363636;
+    color: #fff200;
+    /* color: #3ae374; */
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.hand i{
+    position: absolute;
+    width:var(--width);
+    height: var(--height);
+    background-color: var(--clr);
+    filter: contrast(50);
+    box-shadow: 0 0 3px rgb(111, 161, 35), 0 0 5px rgb(125, 187, 31);
+    border-radius: 10px;
+    z-index: 50;
+   
+}
+
+.calender_Container{
+    width: 48%;
+    height: 500px;
+    padding: 10px;
+    padding-left: 50px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    border: 3px solid #23d3ebce;
+    box-shadow: 1px 1px 5px 2px #23d4eb9f;
+}
+
+.calender_heading{
+    font-size: 35px;
+    line-height: 45px;
+    margin-left: 10px;
+    color: var(--clrHeading);
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.calender_heading span i{
+    font-size: 40px;
+    color: #df0dce;
+}
+
+.calender_Container form{
+    width: 80%;
+    height: 100px;
+    padding: 14px;
+    background-color: rgba(62, 118, 156, 0.486);
+    border-radius: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+}
+.calender_Container form .input_box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap:5px;
+}
+
+.input_box input{
+    flex: 1;
+    height: 35px;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+    /* cursor: pointer; */
+}
+
+.input_box input::-webkit-calendar-picker-indicator{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-position: calc(100% - 10px);
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.input_box button{
+    height: 35px;
+    font-size: 15px;
+    /* font-weight: 500; */
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--clrHeading);
+    font-family: 'Poppins', sans-serif;
+    color: #212121;
+    cursor: pointer;
+}
+.calender_Container h3{
+    font-size: 20px;
+    margin-bottom: 14px;
+    margin-top: -10px;
+}
+
+.calender_Container h3 span{
+    color: var(--clrHeading);
+    font-size: 22px;
+}
+
+.calender_Container h4{
+    font-size: 22px;
+    color: var(--clrHeading);
+}
+
+.calender_Container p{
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 19px;
+}
+
+.calender_Container li{
+    list-style:none;
+}
+
+.calender_Container li::before{
+    content: "\2022";
+    color: var(--clrHeading);
+    width: 18px;
+    height: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: -5px;
+}
+
+
+@media screen and (max-width: 520px) {
+    
+    .outerClock{
+        width: 85%;
+        min-height: 550px;
+        margin: auto;
+    }
+    .brand{
+        top:48%;
+        left:38% !important;
+    }
+    .calender_Container {
+        width: 85%;
+        height: max-content;
+        padding-left: 20px;
+        margin: auto;
+    }
+    .calender_Container form{
+        width: 95%;
+    }
+    .calender_Container p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        width: 100vw;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        /* border: 2px solid #000; */
+    }
+    .wraper {
+        width: 100%;
+        height: 100%;
+    }
+    .outerClock{
+        width: 80%;
+        min-height: 550px;
+        /* border: 1px solid #000; */
+    }
+    .changeColor{
+        width: 80%;
+        margin: 20px auto 60px auto;
+        /* border: 1px solid #000; */
+    }
+    .changeColor h3{
+        font-size: 25px;
+    }
+    .changeColor img{
+        width: 40px;
+        height: 40px;
+    }
+    .brand{
+        top:48%;
+        left: 42%;
+    }
+    .clock {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+    .clock span b {
+        font-size: 25px;
+    }
+
+    .calender_Container {
+        width: 80%;
+        
+    }
+}

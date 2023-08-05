@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog_Clock</title>
+
+    <link rel="styleSheet" href="index.css" />
+
+    <!-- Google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Frontawsom Cdn link -->
+    <script src="https://kit.fontawesome.com/dd14d179ff.js" crossorigin="anonymous"></script>
+
+
+    <!-- Use Fave Icon here -->
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="manifest" href="image/site.webmanifest">
+
+</head>
+<body>
+
+    
+    <div class="outerClock">
+        <div class="wraper">
+            <div class="changeColor">
+                <h3>Chnage Color Mode:- </h3>
+                <img src="image/Moon.png" alt="ChangeMood_Icone" class="icon">
+            </div>
+            <div class="brand">
+                <h4>Royal Watch</h4>
+            </div>
+            <div class="clock">
+            
+                <div style="--clr: #2ecc71; --height:65px; --width:6px" class="hand" id="Hour"><i></i></div>
+                <div style="--clr: #8e44ad; --height:80px; --width:4px" class="hand" id="minuts"><i></i></div>
+                <div style="--clr: #ecf0f1; --height:90px; --width:1.5px" class="hand" id="Second"><i></i></div>
+
+                <span style="--i: 1"><b>1</b></span>
+                <span style="--i: 2"><b>2</b></span>
+                <span style="--i: 3"><b>3</b></span>
+                <span style="--i: 4"><b>4</b></span>
+                <span style="--i: 5"><b>5</b></span>
+                <span style="--i: 6"><b>6</b></span>
+                <span style="--i: 7"><b>7</b></span>
+                <span style="--i: 8"><b>8</b></span>
+                <span style="--i: 9"><b>9</b></span>
+                <span style="--i: 10"><b>10</b></span>
+                <span style="--i: 11"><b>11</b></span>
+                <span style="--i: 12"><b>12</b></span>
+            
+            </div>
+        </div>
+    </div>
+
+
+    <div class="calender_Container">
+        <h2 class="calender_heading"> <span><i class="fa-regular fa-calendar-days "></i></span> <br/> Age Calculator </h2>
+        
+        <form>
+            <label for="date_input">Enter your Birth date :</label>
+           
+            <div class="input_box">
+                <input type="date" id="date_input" required />
+                <button type="submit">Calculator</button>
+            </div>
+        </form>
+        <h3>Your Birth day is <span id="dayName"> ______</span></h3>
+        <h4>Age :</h4>
+        <br/>
+        <p id="totalResult1"></p>
+        <p id="monthResult2"></p>
+        <p id="weeksResult3"></p>
+        <p id="dayResult4"></p>
+        <p id="hourResult5"></p>
+        <p id="minutsResult6"></p>
+        <p id="secondResult7"></p>
+        <p id="mileSecondResult8"></p>
+       
+    </div>
+
+   
+
+
+   <script src="./script.js"></script>
+
+</body>
+</html>
